@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="insertEmployee">
+	INSERT INTO EMPLOYEE
+	VALUES(emp_no, emp_name, emp_position, emp_salary) VALUES (?, ?, ?, ?)
+</entry>
+<entry key="updateEmployee">
+	UPDATE employees 
+	SET emp_name = ?,
+		dept = ?,
+		position = ? 
+	WHERE emp_no = ?
+</entry>
+<entry key="getAllEmployees">
+	SELECT emp_no, 
+	emp_name, dept, position, check_in 
+	FROM employees
+</entry>
+<entry key="deleteEmployee">
+	DELETE FROM employees WHERE emp_no = ?
+</entry>
+<entry key="checkIn">
+	UPDATE employees SET check_in = 1 WHERE emp_no = ? AND check_in = 0
+</entry>
+<entry key="checkOut">
+	UPDATE employees SET check_in = 0 WHERE emp_no = ?
+</entry>
+</properties>
+
